@@ -190,7 +190,7 @@
   function renderCondition(condition) {
     return '<form class="card card-body">' +
         formRow(formLabel('Description') + formInput(condition.code.text)) +
-        formRow(formLabel('Code') + formInput(condition.code.coding[0].code)) +
+        formRow(formLabel('Code') + formInput(getCode(condition))) +
         formRow(formLabel('Date Recorded') + formInput(formatDate(condition.dateRecorded), 'email')) +
         '</form>';
   }
