@@ -180,7 +180,6 @@
 	 array.sort(function (a, b) {
 		  return new Date(a.dateRecorded) < new Date(b.dateRecorded) ? 1 : -1;
 	  });
-	 console.log('sorted conditions', array);
   }
 
   function renderConditions(conditions) {
@@ -223,12 +222,9 @@
 
   function getGuidance() {
     return '<label class="col-sm-12 font-weight-bold">Guidance</label>' +
-        '<ul>' +
-        '<li>Guidance 1</li>' +
-        '<li>Guidance 2</li>' +
-        '<li>Guidance 3</li>' +
-        '<li>Guidance 4</li>' +
-        '</ul>';
+        '<div class="col-sm-12">' +
+        '<textarea class="form-control">Guidance 1 \nGuidance 2 \nGuidance 3</textarea>' +
+	    '</div>';
   }
 
   function getInputType(type) {
