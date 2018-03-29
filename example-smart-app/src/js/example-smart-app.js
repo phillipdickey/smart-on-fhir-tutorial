@@ -32,6 +32,7 @@
         $.when(pt, condition).done(function(patient, conditions) {
           var gender = patient.gender;
 
+          var dob = new Date(patient.birthDate);
           var dobStr = formatDate(patient.birthDate);
           var fname = '';
           var lname = '';
@@ -66,7 +67,7 @@
           // p.hdl = getQuantityValueAndUnit(hdl[0]);
           // p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-            console.log(conditions)
+            console.log(conditions);
             p.conditions = conditions;
 
           ret.resolve(p);
