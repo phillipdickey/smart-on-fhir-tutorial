@@ -196,6 +196,7 @@
         formRow(formLabel('Description') + formInput(condition.code.text)) +
         formRow(formLabel('Code') + formInput(getCode(condition))) +
         formRow(formLabel('Date Recorded') + formInput(formatDate(condition.dateRecorded), 'email')) +
+        formRow(getGuidance()) +
         '</form>';
   }
 
@@ -218,6 +219,16 @@
     return  '<div class="col-sm-10">' +
 		  '<input type="' + getInputType(type)  +'" readonly class="form-control-plaintext" value="' + textValue + '">' +
 		  '</div>';
+  }
+
+  function getGuidance() {
+    return '<label class="col-sm-12">Guidance</label>' +
+        '<ul class="collapse">' +
+        '<li>Guidance 1</li>' +
+        '<li>Guidance 2</li>' +
+        '<li>Guidance 3</li>' +
+        '<li>Guidance 4</li>' +
+        '</ul>';
   }
 
   function getInputType(type) {
