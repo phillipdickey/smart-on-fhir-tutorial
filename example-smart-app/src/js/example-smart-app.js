@@ -169,13 +169,13 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
 
-    sortByDateDesc(p.conditions);
+    sortByDateDesc(p.conditions, 'dateRecorded');
     renderConditions(p.conditions)
   };
 
-  function sortByDateDesc(array) {
-    array.sort(function(a, b) {
-		  return new Date(a) - new Date(b);
+  function sortByDateDesc(array, dateProp) {
+	 array.slice().sort(function (a, b) {
+		  return a[dateProp] < b[dateProp] ? 1 : -1;
 	  });
   }
 
