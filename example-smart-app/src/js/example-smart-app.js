@@ -74,8 +74,12 @@
           ret.resolve(p);
         });
 
-        $.when(pt, condition).done(function(patient, condition) {
-          console.log('condition', condition);
+        $.when(pt, condition).done(function(patient, conditions) {
+          patient.conditions = conditions;
+
+
+          ret.resolve();
+          console.log('conditions', conditions);
         });
       } else {
         onError();
@@ -164,6 +168,25 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+
+    renderConditions(p.conditions)
   };
+
+  function renderConditions(conditions) {
+    var html = $('#conditions');
+    conditions.forEach(function(condition) {
+	    html.append(renderCondition(condition));
+    });
+    return html;
+  }
+
+  function renderCondition(condition) {
+    return condition.text.div;
+    // return '<form>' +
+    //     '<div class="form-group row">' +
+    //     '<label class="col-sm-2 col-form-label"></label>' +
+    //     '</div>' +
+    //     '</form>';
+  }
 
 })(window);
