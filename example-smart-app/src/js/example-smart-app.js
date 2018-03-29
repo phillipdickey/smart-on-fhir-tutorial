@@ -174,12 +174,24 @@
   }
 
   function renderCondition(condition) {
-    return condition.text.div;
-    // return '<form>' +
-    //     '<div class="form-group row">' +
-    //     '<label class="col-sm-2 col-form-label"></label>' +
-    //     '</div>' +
-    //     '</form>';
+    return '<form>' +
+        formRow(formLabel('Code') + formInput(condition.code.text)) +
+        formRow(formLabel('Date Recorded') + formInput(condition.dateRecorded, 'email')) +
+        '</form>';
+  }
+
+  function formRow(innerHtml) {
+    return '<div class="form-group row">' + innerHtml + '</div>';
+  }
+
+  function formLabel(text) {
+    return '<label class="col-sm-2 col-form-label">' + text + '</label>';
+  }
+
+  function formInput(textValue, type) {
+    return  '<div class="col-sm-10">' +
+		  '<input type="'+ type === undefined ? 'text': type + '" readonly class="form-control-plaintext" value="' + textValue + '">' +
+		  '</div>';
   }
 
 })(window);
