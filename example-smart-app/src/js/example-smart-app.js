@@ -195,6 +195,13 @@
         '</form>';
   }
 
+  function getCode(condition) {
+    if (condition.code.coding === undefined) {
+      return 'N/A';
+    }
+    return condition.code.coding[0].code;
+  }
+
   function formRow(innerHtml) {
     return '<div class="form-group row">' + innerHtml + '</div>';
   }
