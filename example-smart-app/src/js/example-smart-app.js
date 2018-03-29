@@ -22,7 +22,12 @@
                     }
                   });
 
+        var condition = smart.patient.api.fetchAll({
+            type: 'Condition'
+        });
+
         $.when(pt, obv).fail(onError);
+        $.when(pt, condition).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
@@ -67,6 +72,10 @@
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
           ret.resolve(p);
+        });
+
+        $.when(pt, condition).done(function(patient, condition) {
+          console.log('condition', condition);
         });
       } else {
         onError();
