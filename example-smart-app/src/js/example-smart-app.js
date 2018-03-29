@@ -81,7 +81,8 @@
 
   };
 
-  function formatDate(date) {
+  function formatDate(dateString) {
+    var date = new Date(dateString);
 	  var day = date.getDate();
 	  var monthIndex = date.getMonth() + 1;
 	  var year = date.getFullYear();
