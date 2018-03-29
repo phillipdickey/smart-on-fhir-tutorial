@@ -169,8 +169,15 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
 
+    sortByDateDesc(p.conditions);
     renderConditions(p.conditions)
   };
+
+  function sortByDateDesc(array) {
+    array.sort(function(a, b) {
+		  return new Date(a) - new Date(b);
+	  });
+  }
 
   function renderConditions(conditions) {
     var html = $('#conditions');
@@ -182,7 +189,8 @@
 
   function renderCondition(condition) {
     return '<form class="card card-body">' +
-        formRow(formLabel('Code') + formInput(condition.code.text)) +
+        formRow(formLabel('Description') + formInput(condition.code.text)) +
+        formRow(formLabel('Code') + formInput(condition.code.coding[0].code)) +
         formRow(formLabel('Date Recorded') + formInput(formatDate(condition.dateRecorded), 'email')) +
         '</form>';
   }
