@@ -177,8 +177,8 @@
   };
 
   function sortByDateDesc(array) {
-	 array.slice().sort(function (a, b) {
-		  return a.dateRecorded < b.dateRecorded ? 1 : -1;
+	 array.sort(function (a, b) {
+		  return new Date(a.dateRecorded) < new Date(b.dateRecorded) ? 1 : -1;
 	  });
 	 console.log('sorted conditions', array);
   }
