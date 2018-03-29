@@ -9,7 +9,7 @@
     <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="container">
     <div id='errors'>
     </div>
     <div id="loading" class="spinner">
@@ -43,31 +43,33 @@
           <td id='age'></td>
         </tr>
       </table>
-      <h2>Observation Resource</h2>
-      <table>
-        <tr>
-          <th>Height:</th>
-          <td id='height'></td>
-        </tr>
-        <tr>
-          <th>Systolic Blood Pressure:</th>
-          <td id='systolicbp'></td>
+      <!--<h2>Observation Resource</h2>-->
+      <!--<table>-->
+        <!--<tr>-->
+          <!--<th>Height:</th>-->
+          <!--<td id='height'></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<th>Systolic Blood Pressure:</th>-->
+          <!--<td id='systolicbp'></td>-->
 
-        </tr>
-        <tr>
-          <th>Diastolic Blood Pressure:</th>
-          <td id='diastolicbp'></td>
-        </tr>
-        <tr>
-          <th>LDL:</th>
-          <td id='ldl'></td>
-        </tr>
-        <tr>
-          <th>HDL:</th>
-          <td id='hdl'></td>
-        </tr>
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<th>Diastolic Blood Pressure:</th>-->
+          <!--<td id='diastolicbp'></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<th>LDL:</th>-->
+          <!--<td id='ldl'></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<th>HDL:</th>-->
+          <!--<td id='hdl'></td>-->
+        <!--</tr>-->
         <h2>Conditions</h2>
-        <div id='conditions'></div>
+        <div class="row">
+          <div id='conditions' class="col-sm-12"></div>
+        </div>
       </table>
     </div>
     <!-- Required JS files to enable this page to embed within an MPage -->

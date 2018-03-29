@@ -70,6 +70,7 @@
           // p.hdl = getQuantityValueAndUnit(hdl[0]);
           // p.ldl = getQuantityValueAndUnit(ldl[0]);
 
+            console.log(conditions);
             p.conditions = conditions;
 
           ret.resolve(p);
@@ -174,7 +175,7 @@
   }
 
   function renderCondition(condition) {
-    return '<form>' +
+    return '<form class="card card-body">' +
         formRow(formLabel('Code') + formInput(condition.code.text)) +
         formRow(formLabel('Date Recorded') + formInput(condition.dateRecorded, 'email')) +
         '</form>';
@@ -185,7 +186,7 @@
   }
 
   function formLabel(text) {
-    return '<label class="col-sm-2 col-form-label">' + text + '</label>';
+    return '<label class="col-sm-2 col-form-label font-weight-bold">' + text + '</label>';
   }
 
   function formInput(textValue, type) {
