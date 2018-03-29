@@ -52,3 +52,7 @@ body {
     transform: scale(1.0);
   }
 }
+
+.card {
+  margin: 1em;
+}

@@ -31,12 +31,8 @@
 
         $.when(pt, condition).done(function(patient, conditions) {
           var gender = patient.gender;
-          var dob = new Date(patient.birthDate);
-          var day = dob.getDate();
-          var monthIndex = dob.getMonth() + 1;
-          var year = dob.getFullYear();
 
-          var dobStr = monthIndex + '/' + day + '/' + year;
+          var dobStr = formatDate(patient.birthDate);
           var fname = '';
           var lname = '';
 
@@ -70,7 +66,7 @@
           // p.hdl = getQuantityValueAndUnit(hdl[0]);
           // p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-            console.log(conditions);
+            console.log(conditions)
             p.conditions = conditions;
 
           ret.resolve(p);
@@ -84,6 +80,14 @@
     return ret.promise();
 
   };
+
+  function formatDate(date) {
+	  var day = date.getDate();
+	  var monthIndex = date.getMonth() + 1;
+	  var year = date.getFullYear();
+
+	  return monthIndex + '/' + day + '/' + year;
+  }
 
   function defaultPatient(){
     return {
@@ -177,7 +181,7 @@
   function renderCondition(condition) {
     return '<form class="card card-body">' +
         formRow(formLabel('Code') + formInput(condition.code.text)) +
-        formRow(formLabel('Date Recorded') + formInput(condition.dateRecorded, 'email')) +
+        formRow(formLabel('Date Recorded') + formInput(formatDate(condition.dateRecorded), 'email')) +
         '</form>';
   }
 
