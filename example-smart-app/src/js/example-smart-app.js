@@ -67,6 +67,9 @@
           // p.hdl = getQuantityValueAndUnit(hdl[0]);
           // p.ldl = getQuantityValueAndUnit(ldl[0]);
 
+            conditions = conditions.filter(function(condition) {
+              return condition.verificationStatus  !== 'entered-in-error';
+            });
             console.log(conditions);
             p.conditions = conditions;
 
@@ -169,14 +172,15 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
 
-    sortByDateDesc(p.conditions, 'dateRecorded');
+    sortByDateDesc(p.conditions);
     renderConditions(p.conditions)
   };
 
-  function sortByDateDesc(array, dateProp) {
+  function sortByDateDesc(array) {
 	 array.slice().sort(function (a, b) {
-		  return a[dateProp] < b[dateProp] ? 1 : -1;
+		  return a.dateRecorded < b.dateRecorded ? 1 : -1;
 	  });
+	 console.log('sorted conditions', array);
   }
 
   function renderConditions(conditions) {
