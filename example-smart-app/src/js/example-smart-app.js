@@ -222,8 +222,8 @@
   }
 
   function getGuidance() {
-    return '<label class="col-sm-12">Guidance</label>' +
-        '<ul class="collapse">' +
+    return '<label class="col-sm-12 font-weight-bold">Guidance</label>' +
+        '<ul>' +
         '<li>Guidance 1</li>' +
         '<li>Guidance 2</li>' +
         '<li>Guidance 3</li>' +
