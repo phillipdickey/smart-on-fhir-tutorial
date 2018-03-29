@@ -190,8 +190,12 @@
 
   function formInput(textValue, type) {
     return  '<div class="col-sm-10">' +
-		  '<input type="'+ type === undefined ? 'text': type + '" readonly class="form-control-plaintext" value="' + textValue + '">' +
+		  '<input type="' + getInputType(type)  +'" readonly class="form-control-plaintext" value="' + textValue + '">' +
 		  '</div>';
+  }
+
+  function getInputType(type) {
+    return type === undefined ? 'text' : type;
   }
 
 })(window);
